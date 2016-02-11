@@ -3,6 +3,12 @@
 import UIKit
 
 
+extension Character {
+    var isSpace: Bool {
+        return self == " " || self == "\r\n"
+    }
+}
+
 func reverseString(var characters: [Character]) -> [Character]{
     
     func swapFunction(inout stringArray: [Character], currentchar: Int) {
@@ -29,7 +35,7 @@ func sliceString(var characters: [Character]) -> [Character]{
     var previousSpace = -1
     for var space = 0; space < characters.count; space++ {
         
-        if characters[space] == " " || characters[space] == "\r\n" {
+        if characters[space].isSpace || characters[space].isSpace {
             let middle = (space + previousSpace + 1)/2
             let wordStartIndex = previousSpace + 1
             
